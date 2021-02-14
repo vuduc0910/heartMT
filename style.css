@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgb(241, 57, 57);
+}
+.container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heart {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(247, 6, 6);
+  position: absolute;
+  transform: rotate(45deg);
+}
+.heart::before {
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgb(247, 6, 6);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+.heart::after {
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgb(247, 6, 6);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  transform: translate(0, -50%);
+}
+.mainContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: rgb(230, 95, 95);
+  font-family: "Parisienne", cursive;
+  animation: animate 3s linear infinite;
+}
+@keyframes animate {
+  0% {
+    z-index: -1;
+    font-size: 60px;
+  }
+  50% {
+    z-index: 1;
+    font-size: 80px;
+  }
+  100%{
+    z-index: -1;
+    font-size: 60px;
+  }
+}
