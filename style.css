@@ -46,7 +46,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 1000;
   position: absolute;
   transform: translate(0, -50%);
 }
@@ -62,7 +62,7 @@ body {
 }
 @keyframes animate {
   0% {
-    z-index: -1;
+    z-index: 1;
     font-size: 60px;
   }
   50% {
@@ -70,7 +70,93 @@ body {
     font-size: 80px;
   }
   100%{
-    z-index: -1;
+    z-index: 1;
     font-size: 60px;
+  }
+}
+
+
+
+/* warpper */
+.wrapper {
+  position: absolute;
+  top: calc(50% - 100px);
+  left:calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  /* background-color: rgb(184, 70, 70); */
+}
+.box-area{
+  animation : boxAnimation 12s linear infinite;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 0;
+}
+.box-area div{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+}
+.box-area .box1{
+  background-image: url(./media/1.jpg);
+  background-position:center;
+  background-size:cover;
+  -webkit-background-size:cover;
+  transform:translateZ(100px);
+}
+.box-area .box2{
+  background-image: url(./media/2.jpg);
+  background-position:center;
+  background-size:cover;
+  -webkit-background-size:cover;
+  transform: rotateY(90deg) translateZ(100px);
+}
+.box-area .box3{
+  background-image: url(./media/3.jpg);
+  background-position:center;
+  background-size:cover;
+  -webkit-background-size:cover;
+  transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+}
+.box-area .box4{
+  background-image: url(./media/4.jpg);
+  background-position:center;
+  background-size:cover;
+  -webkit-background-size:cover;
+  transform:rotateY(180deg) rotateZ(90deg) translateZ(100px) ;
+}
+.box-area .box5{
+  background-image: url(./media/5.jpg);
+  background-position:center;
+  background-size:cover;
+  -webkit-background-size:cover;
+  transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+}
+.box-area .box6{
+  background-image: url(./media/6.jpg);
+  background-position:center;
+  background-size:cover;
+  -webkit-background-size:cover;
+  transform:rotateX(-90deg) translateZ(100px) ;
+}
+@keyframes boxAnimation{
+  from,to {
+   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  16%{
+    transform: rotateY(-90deg);
+  }
+  33%{
+    transform: rotateY(-90deg) rotateZ(90deg) translateX(100px);
+  }
+  50%{
+    transform: rotateY(-180deg) rotateZ(90deg) translateX(100px) translateY(-100px);
+  }
+  67%{
+    transform: rotateY(-270deg) rotateX(90deg) translateX(100px)  translateY(-100px) translateZ(-100px);
+  }
+  83%{
+    transform: rotateX(90deg)  translateY(-100px) translateZ(-100px); /*translateX(-100px) */
   }
 }
